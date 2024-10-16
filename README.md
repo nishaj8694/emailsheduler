@@ -2,49 +2,50 @@
 Welcome to the Dynamic Email Scheduler project. This project leverages Django, Celery, and Redis to allow users to schedule emails at a specific time. Additionally, it includes JWT authentication using Django REST Framework.
 
 # Features
-Email Scheduling: Users can create and schedule emails to be sent at a specified time.
+Email Scheduling: Users can create and schedule emails to be sent at a specified time.<br>
 JWT Authentication: Secure user authentication using JSON Web Tokens (JWT) with Django REST Framework.
 
 # Prerequisites
-  Python 3.x
-  Django
-  Django REST Framework
-  Celery
-  Redis
-  django-celery-results
+  Python 3.<br>
+  Django<br>
+  Django REST Framework<br>
+  Celery<br>
+  Redis<br>
+  django-celery-results<br>
 
 # Installation
-Clone the Repository
-      git clone https://github.com/yourusername/machineTest.git
-      cd machineTest
-Create Virtual Environment
-        python -m venv venv
-        source venv/bin/activate  # On Windows: venv\Scripts\activate
+Clone the Repository<br>
+      git clone https://github.com/yourusername/machineTest.git<br>
+      cd machineTest<br>
 
-Install Dependencies
-        pip install -r requirements.txt
+Create Virtual Environment<br>
+        python -m venv venv<br>
+        source venv/bin/activate  # On Windows: venv\Scripts\activate<br>
 
-Configure Django Settings
-        Update settings.py with your database configuration, Celery settings, and JWT settings.
+Install Dependencies<br>
+        pip install -r requirements.txt<br>
 
-Run Migrations
-        python manage.py migrate
+Configure Django Settings<br>
+        Update settings.py with your database configuration, Celery settings, and JWT settings.<br>
 
-Create Superuser
-         python manage.py createsuperuser
+Run Migrations<br>
+        python manage.py migrate<br>
 
-Start the Development Server
-         python manage.py runserver
+Create Superuser<br>
+         python manage.py createsuperuser<br>
 
-Start Redis Server
-        redis-server
+Start the Development Server<br>
+         python manage.py runserver<br>
 
-Start Celery Worker
-        celery -A your_project_name worker --loglevel=info
+Start Redis Server<br>
+        redis-server<br>
+
+Start Celery Worker<br>
+        celery -A machineTest worker --loglevel=info<br>
 
 # usage
-Register and Login
-        Use the provided endpoints to register and obtain a JWT token.
+Register and Login<br>
+        Use the provided endpoints to register and obtain a JWT token.<br>
 
-Schedule an Email
+Schedule an Email<br>
         Use the authenticated endpoint to create an email and set the desired sending time
