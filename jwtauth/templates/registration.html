@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Creation</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            #pswdhelp,#usrhelp{
+                display: none;
+            }
+            #id_username,#id_password2,table{
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container" style="height: 100vh;">
+            <div class="row h-100 d-flex justify-content-center align-items-center">
+                <div class="col-md-6 border p-5 rounded">
+                    <h3 class="text-center">user registeration</h3> 
+                    <form method="post" action="{% url 'usercreation' %}"  >
+                        {% csrf_token %}
+                        <table>
+                         <tbody>
+                            <tr>
+                                <div class="form-group">
+                                    <td>
+                                        <label for="id_username">Username</label>
+                                    </td>
+                                    <td class="d-flex flex-column w-100">
+                                        {{form.username}}
+                                        <small id="usrhelp">{{form.username.help_text}}</small>
+                                    </td>
+                                </div>
+                            </tr>
+                            <tr>
+                                <div class="form-group">
+                                    <td style="position: relative;">
+                                        <label for="id_password1" style="position: absolute; top:0">Password </label>
+                                    </td>
+                                    <td class="d-flex flex-column">
+                                        {{form.password1}}
+                                        <small id="pswdhelp">{{form.password1.help_text}}</small>
+                                    </td>
+                                </div> 
+                            </tr>
+                            <tr>
+                                <div class="form-group">
+                                    <td>
+                                        <label for="id_password2">conform Password </label>
+                                    </td>
+                                    <td>
+                                        {{form.password2}}
+                                    </td>
+                                </div> 
+                            </tr>    
+                        </table>
+                        <button type="submit"class="btn btn-primary btn-block">register user</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.getElementById('id_password1').addEventListener('focus',function(){
+                document.getElementById('pswdhelp').style.display='block';
+            })
+            document.getElementById('id_password1').addEventListener('blur',function(){
+                document.getElementById('pswdhelp').style.display='none';
+
+            })
+            document.getElementById('id_username').addEventListener('focus',function(){
+                document.getElementById('usrhelp').style.display='block';
+            })
+            document.getElementById('id_username').addEventListener('blur',function(){
+                document.getElementById('usrhelp').style.display='none';
+
+            })
+        </script>    
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>     
+    </body>
+</html>

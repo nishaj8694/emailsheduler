@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>home Page</title>
+        <style>
+            a{
+              display: block;
+              color: black;
+             }
+            p{
+                text-align: center;
+            } 
+        </style>
+    </head>
+    <body>
+       <h2 style="text-align: center;">home Page</h2>
+       <p><a href="{% url 'emailcreation' %}">shedule Email</a></p>
+       <p><a href="{% url 'userlogout' %}">logout</a></p>
+
+    </body>
+</html>

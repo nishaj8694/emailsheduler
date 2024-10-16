@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>django app</title>
+        <style>
+            a{
+              display: block;
+              color: black; 
+             }
+             .txtcent{
+                text-align: center;
+             }
+        </style>
+    </head>
+    <body>
+       <h2 style="text-align: center;">Index Page</h2>
+        <p class="txtcent"><a href="{% url 'home' %}">Dashboard</a></p>
+        <p class="txtcent"><a href="{% url 'usercreation' %}">user registration</a></p>
+        <p class="txtcent"><a href="{% url 'userlogin' %}">login</a></p>   
+    </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Email sheduler</title>
+        <!-- Include Bootstrap CSS -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            table{
+                width: 100%;
+            }
+            #id_reciever,#id_Push_time,#id_subject,#id_message{
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body >
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-6"> 
+                    <h3 class="text-center">shedule email</h3> 
+                    <form method="post" action="{% url 'emailcreation' %}" >
+                        {% csrf_token %}
+                        <table>
+                            <tbody>
+                                <tr>
+                                   <div class="form-group">
+                                        <td>
+                                            <label for="id_reciever">recipient</label>
+                                        </td>
+                                        <td>
+                                             {{form.reciever}}
+                                        </td>
+                                    </div>  
+                                </tr>
+                                <tr>
+                                    <div class="form-group">
+                                         <td>
+                                             <label for="id_subject">subject</label>
+                                         </td>
+                                         <td>
+                                              {{form.subject}}
+                                         </td>
+                                     </div>  
+                                </tr>
+                                <tr>
+                                    <div class="form-group">
+                                         <td>
+                                             <label for="id_message">message</label>
+                                         </td>
+                                         <td>
+                                              {{form.message}}
+                                         </td>
+                                     </div>  
+                                </tr>
+                                <tr>
+                                    <div class="form-group">
+                                         <td>
+                                             <label for="id_Push_time">sheduled time</label>
+                                         </td>
+                                         <td>
+                                              {{form.Push_time}}
+                                         </td>
+                                     </div>  
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                        <button type="submit"class="btn btn-primary btn-block">create email</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>            
+    </body>
+</html>
